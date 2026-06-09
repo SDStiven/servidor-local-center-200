@@ -3,8 +3,7 @@
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { gql } from "@apollo/client";
-import { useQuery } from "@apollo/client/react";
+
 
 interface PropostaRequest{
     id: string,

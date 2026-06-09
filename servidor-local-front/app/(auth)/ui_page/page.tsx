@@ -39,14 +39,14 @@ export default function ProposalPage() {
         }`
 
 
-    function getAllProposta(): any {    
+    function useGetAllProposta(): { loading: boolean; error: unknown; data: unknown } {    
         const { data, loading, error } = useQuery<PropostaRequest>(dataQuery);
         return {loading, error, data };
     };
 
 
 
-    const { loading, error, data } = getAllProposta();
+    const { loading, error, data } = useGetAllProposta();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 

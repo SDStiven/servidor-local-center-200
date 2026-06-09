@@ -33,7 +33,7 @@ export const GET_ALL_PRESTACOES_SERVICOS = gql`
     }
 `
 
-export function getAllPrestacoesServicos() {
+export function useGetAllPrestacoesServicos() {
     const { loading, error, data } = useQuery<PrestacaoServicoDBType[]>(GET_ALL_PRESTACOES_SERVICOS);
     return { loading, error, data };
 }

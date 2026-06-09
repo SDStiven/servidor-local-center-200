@@ -8,7 +8,7 @@ type CategoryItem = {
 
 interface SidebarProps {
   categories: CategoryItem[];
-  activeCategory:string;
+  activeCategory: string;
   onCategorySelect: (categoryKey: string) => void;
 }
 
@@ -27,11 +27,10 @@ export default function Sidebar({ categories, activeCategory, onCategorySelect }
               key={category.key}
               type="button"
               onClick={() => onCategorySelect(category.key)}
-              className={`group flex items-center gap-3 rounded-2xl px-4 py-3 text-left transition ${
-                activeCategory === category.key
+              className={`group flex items-center gap-3 rounded-2xl px-4 py-3 text-left transition ${activeCategory === category.key
                   ? "bg-slate-900 text-white"
                   : "bg-slate-50 text-slate-700 hover:bg-slate-100"
-              }`}
+                }`}
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-slate-900 shadow-sm">
                 {category.icon}

@@ -27,7 +27,7 @@ const GET_ALL_PROPOSALS = gql`
     
 `
 
-export function getAllProposals() {
+export function useGetAllProposals() {
     const { loading, error, data } = useQuery<ProposalType[]>(GET_ALL_PROPOSALS);
     return { loading, error, data };
 }

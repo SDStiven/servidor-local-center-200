@@ -1,0 +1,84 @@
+﻿
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\app\(auth)\ui_page\page.tsx
+  42:32  error  Unexpected any. Specify a different type                                                                                                                                                                                                              @typescript-eslint/no-explicit-any
+  43:42  error  React Hook "useQuery" is called in function "getAllProposta" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\components_project\proposal_board.tsx
+  6:10  warning  'gql' is defined but never used       @typescript-eslint/no-unused-vars
+  7:10  warning  'useQuery' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\core\navbar.tsx
+  1:10  warning  'BellIcon' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\dashboard\sidebar.tsx
+  14:81  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\navbar\nav-request.tsx
+  1:10  warning  'Bell' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\navbar\nav.tsx
+  7:8  warning  'SearchIcon' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\sidebars\sidebar.tsx
+  1:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\tabela\table.tsx
+   11:62  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+   14:9   error  Error: Cannot access variable before it is declared
+
+`fetchData` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\tabela\table.tsx:14:9
+  12 |
+  13 |     useEffect(() => {
+> 14 |         fetchData();
+     |         ^^^^^^^^^ `fetchData` accessed before it is declared
+  15 |     }, []);
+  16 |
+  17 |     const fetchData = async () => {
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\components\tabela\table.tsx:17:5
+  15 |     }, []);
+  16 |
+> 17 |     const fetchData = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         try {
+     | ^^^^^^^^^^^^^
+> 19 |             const response = await fetch(
+     ÔÇª
+     | ^^^^^^^^^^^^^
+> 50 |         }
+     | ^^^^^^^^^^^^^
+> 51 |     };
+     | ^^^^^^^ `fetchData` is declared here
+  52 |
+  53 |     return (
+  54 |         <div>  react-hooks/immutability
+  123:54  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\data\queries\prestacao-servico.ts
+  37:38  error  React Hook "useQuery" is called in function "getAllPrestacoesServicos" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\data\queries\proposta.ts
+  31:38  error  React Hook "useQuery" is called in function "getAllProposals" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\hooks\use-mobile.ts
+  14:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Ismar\Documents\servidor-local-center-200\servidor-local-front\hooks\use-mobile.ts:14:5
+  12 |     }
+  13 |     mql.addEventListener("change", onChange)
+> 14 |     setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  15 |     return () => mql.removeEventListener("change", onChange)
+  16 |   }, [])
+  17 |  react-hooks/set-state-in-effect
+
+Ô£û 15 problems (9 errors, 6 warnings)
+

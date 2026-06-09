@@ -1,4 +1,4 @@
-import { Bell, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "../ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "../drawer";
 import BellIcon from "@/assets/icons/bell-icon";

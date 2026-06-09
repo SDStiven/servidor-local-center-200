@@ -8,11 +8,8 @@ import { toast } from "sonner";
 
 
 export const RequestTable = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [prestacaoServico, setPrestacaoServico] = useState<any[]>([]);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     const fetchData = async () => {
         try {
@@ -49,6 +46,11 @@ export const RequestTable = () => {
             );
         }
     };
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        fetchData();
+    }, []);
 
     return (
         <div>
@@ -120,6 +122,7 @@ export const RequestTable = () => {
                         </tr>
 
                         {/* Dados vindos da API */}
+                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                         {prestacaoServico.map((item: any) => (
                             <tr
                                 key={item.id}

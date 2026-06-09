@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Input } from "../ui/input";
 import UserRound from "@/assets/icons/user-icon";
 import BellIcon from "@/assets/icons/bell-icon";
-import SearchIcon from "@/assets/icons/search-icon";
 
 
 
