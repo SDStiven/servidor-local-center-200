@@ -855,6 +855,6 @@ app.listen(8080, () => {
 <<<<<<< HEAD
     console.log("Servidor rodando na porta 8080");
 =======
-    console.log("Servidor rodando em http://localhost:8080");
+    console.log(`Servidor rodando em ${process.env.NEXT_PUBLIC_DATA_API_URL}`);
 >>>>>>> 6882c7ff9db5db1972ef090b735c7803d73f7f73
 });
