@@ -39,7 +39,7 @@ export default function ProposalPage() {
         }`
 
 
-    function useGetAllProposta(): { loading: boolean; error: unknown; data: unknown } {    
+    function useGetAllProposta():any {    
         const { data, loading, error } = useQuery<PropostaRequest>(dataQuery);
         return {loading, error, data };
     };
