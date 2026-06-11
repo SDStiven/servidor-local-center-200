@@ -23,7 +23,7 @@ app.use(express.json()); // para interpretar o corpo das requisições como JSON
 
 // liberta o front-end de aceder ao back-end
 app.use(cors({
-    origin: ["http://localhost:3000", "https://servidor-local-center-backend2.onrender.com"],
+    origin: ["http://localhost:3000", "https://servidor-local-center-backend2.onrender.com", "https://servidor-local-center-200-catxupa.vercel.app", ""],
     credentials: true,
     allowedHeaders: ["Content-Type", "authorization"],
 }));
@@ -74,6 +74,8 @@ const sslOptions = {
     cert: fs.readFileSync('./cert/server.cert')
 };
 
-https.createServer(sslOptions, app).listen(8080, () => {
-    console.log("Servidor rodando em https://localhost:8080");
+const PORT  = process.env.PORT ?? 8080
+
+https.createServer(sslOptions, app).listen(PORT, () => {
+    console.log(`Servidor rodando em https://localhost:${PORT}`);
 });
