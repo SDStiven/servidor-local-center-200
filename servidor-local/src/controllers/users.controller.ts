@@ -117,7 +117,9 @@ export const UsersController = {
             };
             return res.status(404).json(response);
         }
-
+        
+        console.log("dados do usuário:", userData)
+        console.log("dados da senha:", password)
         const isPasswordValid = await comparePassword(password, userData.password);
 
         if (!isPasswordValid) {
