@@ -16,6 +16,7 @@ import swaggerUi from "swagger-ui-express"
 import { ApolloServer } from "@apollo/server";
 import { resolvers, typeDefs } from "./graphql/index.js";
 import { expressMiddleware } from "@as-integrations/express5";
+import { initDatabase } from "./lib/init-db.js";
 
 const app = express();
 
@@ -73,6 +74,8 @@ const sslOptions = {
     key: fs.readFileSync('./cert/server.key'),
     cert: fs.readFileSync('./cert/server.cert')
 };
+
+await initDatabase()
 
 const PORT  = process.env.PORT ?? 8080
 
