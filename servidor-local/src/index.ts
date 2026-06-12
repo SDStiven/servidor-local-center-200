@@ -76,6 +76,22 @@ const sslOptions = {
 
 const PORT  = process.env.PORT ?? 8080
 
-https.createServer(sslOptions, app).listen(PORT, () => {
-    console.log(`Servidor rodando em https://localhost:${PORT}`);
-});
+if(process.env.NODE_ENV === "development") {
+    // iniciar em modo de desenvolvimento sem SSL
+    const sslOptions = {
+        key: fs.readFileSync('./cert/server.key'),
+        cert: fs.readFileSync('./cert/server.cert')
+    };
+   
+    // iniciar em modo de produção com SSL
+    https.createServer(sslOptions, app).listen(PORT, () => {
+        console.log(`Servidor rodando em https://localhost:${PORT}`);
+    });
+} else {
+    // iniciar em modo de desenvolvimento sem SSL
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando em https://localhost:${PORT}`);
+    });
+}
+
+
