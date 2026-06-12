@@ -11,7 +11,7 @@ const options: swaggerJsdoc.Options = {
         },
         servers: [
             {
-                url: `${process.env.NEXT_PUBLIC_DATA_API_URL}`,
+                url: `${process.env.NEXT_PUBLIC_API_URL}`,
                 description: `dev`,
             }
         ],
