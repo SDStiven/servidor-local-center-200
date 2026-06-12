@@ -3,4 +3,6 @@ package-lock.json
 maincontext.ts
 .env
 .env.*
+dist
+node_modules_prod
 

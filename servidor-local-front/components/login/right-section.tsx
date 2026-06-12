@@ -17,7 +17,7 @@ export const RightSection = () => {
   const handleLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_DATA_API_URL}/users/login`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
