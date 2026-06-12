@@ -34,6 +34,7 @@ export const UsersModel = {
       ];
 
       const result = await db.query<UserDBType>(query, values);
+      console.log("dados do usuário no model:", result);
       if (result.rows.length === 0 || !result?.rows[0] || !result) return null;
       return result.rows[0];
     } catch (error) {
