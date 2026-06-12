@@ -117,10 +117,12 @@ export const UsersController = {
             };
             return res.status(404).json(response);
         }
-        
+
         console.log("dados do usuário:", userData)
         console.log("dados da senha:", password)
         const isPasswordValid = await comparePassword(password, userData.password);
+
+        console.log("isPasswordValid:", isPasswordValid)
 
         if (!isPasswordValid) {
             const response: ResponseType<null> = {
@@ -145,16 +147,16 @@ export const UsersController = {
             { expiresIn: "7d" }
         );
 
-        const response: ResponseType<{token: string, user: typeof payload}>= {
+        const response: ResponseType<{ token: string, user: typeof payload }> = {
             status: "success",
             message: "Login bem-sucedido",
             data: {
                 token,
                 user: payload,
             },
-        } 
+        }
         return res.status(200).json(response)
-    }, 
+    },
 
     async updatePassword(req: any, res: Response) {
 
